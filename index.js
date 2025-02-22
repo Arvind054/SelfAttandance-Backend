@@ -3,7 +3,7 @@ const PORT = process.env.PORT || 3000;
 const {ClassUsers, Subjects, Class} = require("./Models/Schema.js");
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
