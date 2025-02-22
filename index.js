@@ -11,11 +11,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-
 //Database Connection
 dbConnection()
-.then(console.log("db connected successfully"))
-.catch((e)=>{console.log("error connecting DB, ", e)});
+.then()
+.catch((e)=>{});
 async function dbConnection(){
     await mongoose.connect(process.env.MONGODB_URL);
 };
@@ -136,6 +135,4 @@ app.delete("/subject/delete", async(req, res)=>{
         res.status(401).send("Error Occured");
     }
 })
-app.listen(PORT, ()=>{
-    console.log("App is Listening to Port");
-})
+app.listen(PORT)
